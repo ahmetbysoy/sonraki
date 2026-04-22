@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-shake: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  --animate-flash-buy: flashBuy 0.4s ease-out;
+  --animate-flash-sell: flashSell 0.4s ease-out;
+
+  @keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+  }
+
+  @keyframes flashBuy {
+    0% { background-color: #d1fae5; transform: scale(1.02); }
+    100% { background-color: transparent; transform: scale(1); }
+  }
+
+  @keyframes flashSell {
+    0% { background-color: #fee2e2; transform: scale(1.02); }
+    100% { background-color: transparent; transform: scale(1); }
+  }
+}
+
+.flash-buy {
+  animation: flashBuy 0.4s ease-out;
+}
+
+.flash-sell {
+  animation: flashSell 0.4s ease-out;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
